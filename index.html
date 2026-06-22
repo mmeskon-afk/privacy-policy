@@ -7,7 +7,7 @@
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
         h1 { color: #1a1a1a; }
-        h2 { color: #333; margin-top: 30px; }
+        h2 { color: #333; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
         h3 { color: #444; margin-top: 20px; }
         a { color: #0366d6; }
         .language-selector { text-align: center; margin-bottom: 30px; padding: 15px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8; }
@@ -18,21 +18,45 @@
         .language-section.active { display: block; }
         ul { margin-bottom: 15px; }
         li { margin-bottom: 5px; }
+        
+        /* Стили для требований Huawei */
+        .developer-info { background: #f1f8ff; padding: 15px; border-left: 5px solid #0366d6; margin-bottom: 25px; border-radius: 4px; font-size: 16px; }
+        .developer-info strong { color: #0366d6; }
+        
+        /* Правило 1.10: Выделение чувствительных персональных данных */
+        .sensitive { 
+            color: #d9534f; 
+            font-weight: bold; 
+            text-decoration: underline; 
+            font-size: 1.05em;
+        }
+        
+        /* Таблица для SDK (Правило 1.4) */
+        .sdk-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; font-size: 14px; }
+        .sdk-table th, .sdk-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .sdk-table th { background-color: #f6f8fa; }
     </style>
 </head>
 <body>
     <div class="language-selector">
         <a href="#" id="btn-ru" class="active" onclick="showLanguage('ru'); return false;">🇷🇺 Русский</a> | 
-        <a href="#" id="btn-en" onclick="showLanguage('en'); return false;">🇬🇧 English</a>
+        <a href="#" id="btn-en" onclick="showLanguage('en'); return false;">🇬🇧 English</a> |
+        <a href="#" id="btn-zh" onclick="showLanguage('zh'); return false;">🇨🇳 简体中文</a>
     </div>
 
     <!-- РУССКАЯ ВЕРСИЯ -->
     <div id="ru" class="language-section active">
-        <h1>Политика конфиденциальности приложения Праздники</h1>
-        <p><strong>Последнее обновление:</strong> 21 июня 2026 г.</p>
+        <h1>Политика конфиденциальности приложения «Праздники»</h1>
+        <p><strong>Последнее обновление:</strong> 22 июня 2026 г.</p>
+
+        <div class="developer-info">
+            <p><strong>Название приложения:</strong> Праздники</p>
+            <p><strong>Разработчик:</strong> [ВСТАВЬТЕ ВАШЕ ТОЧНОЕ ФИО ИЛИ НАЗВАНИЕ КОМПАНИИ ИЗ APPGALLERY CONNECT]</p>
+            <p><strong>Контактный Email:</strong> dde72ru@yandex.ru</p>
+        </div>
 
         <h2>1. Общие положения</h2>
-        <p>Настоящая Политика конфиденциальности описывает, как разработчик приложения Праздники собирает, использует и защищает персональные данные пользователей приложения Праздники ("Приложение").</p>
+        <p>Настоящая Политика конфиденциальности описывает, как разработчик приложения «Праздники» собирает, использует и защищает персональные данные пользователей приложения «Праздники» ("Приложение").</p>
         <p>Используя Приложение, вы соглашаетесь с условиями настоящей Политики.</p>
 
         <h2>2. Какие данные мы собираем</h2>
@@ -43,12 +67,12 @@
             <li>Идентификатор устройства (OAID)</li>
             <li>Операционная система и её версия</li>
             <li>Статус устройства</li>
-            <li>MAC-адреса и IP-адреса доступных Wi-Fi устройств</li>
+            <li><span class="sensitive">MAC-адреса и IP-адреса доступных Wi-Fi устройств</span></li>
         </ul>
 
         <h3>2.2. Геолокационные данные:</h3>
         <ul>
-            <li>Данные о местоположении устройства</li>
+            <li><span class="sensitive">Данные о местоположении устройства (Геолокация)</span></li>
         </ul>
 
         <h3>2.3. Данные об использовании:</h3>
@@ -75,41 +99,67 @@
         </ul>
         <p>Мы не продаём ваши персональные данные третьим лицам.</p>
 
-        <h2>5. Хранение данных</h2>
-        <p>Ваши данные хранятся на серверах, расположенных за пределами материкового Китая.</p>
-        <p>Срок хранения данных: до удаления приложения пользователем.</p>
+        <h2>5. Сторонние SDK</h2>
+        <p>Для обеспечения работы приложения мы используем следующие сторонние SDK, которые могут собирать персональные данные:</p>
+        <table class="sdk-table">
+            <tr>
+                <th>Название SDK</th>
+                <th>Разработчик SDK</th>
+                <th>Собираемые данные</th>
+                <th>Цель сбора</th>
+                <th>Политика конфиденциальности</th>
+            </tr>
+            <tr>
+                <td>Huawei Ads / Analytics SDK</td>
+                <td>Huawei</td>
+                <td>OAID, статус устройства</td>
+                <td>Аналитика и показ рекламы</td>
+                <td><a href="https://developer.huawei.com/consumer/cn/" target="_blank">Ссылка</a></td>
+            </tr>
+            <!-- ОБЯЗАТЕЛЬНО ДОБАВЬТЕ СЮДА ДРУГИЕ SDK (AdMob, Firebase, AppMetrica, Unity и т.д.), ЕСЛИ ОНИ ИСПОЛЬЗУЮТСЯ -->
+        </table>
 
-        <h2>6. Ваши права</h2>
+        <h2>6. Хранение данных</h2>
+        <p>Ваши данные хранятся на серверах, расположенных за пределами материкового Китая.</p>
+        <p>Срок хранения данных: до удаления приложения пользователем или до момента отзыва согласия.</p>
+
+        <h2>7. Ваши права, отзыв согласия и удаление аккаунта</h2>
         <p>Вы имеете право:</p>
         <ul>
-            <li><strong>Доступ:</strong> запросить копию ваших персональных данных</li>
-            <li><strong>Исправление:</strong> исправить неточные данные</li>
-            <li><strong>Удаление:</strong> запросить удаление ваших данных</li>
-            <li><strong>Ограничение обработки:</strong> ограничить использование ваших данных</li>
-            <li><strong>Отзыв согласия:</strong> отозвать согласие на обработку данных в любое время</li>
+            <li><strong>Доступ и исправление:</strong> запросить копию ваших персональных данных или исправить неточные данные.</li>
+            <li><strong>Удаление:</strong> запросить удаление ваших данных.</li>
+            <li><strong>Ограничение обработки:</strong> ограничить использование ваших данных.</li>
         </ul>
-        <p>Для реализации этих прав свяжитесь с нами по адресу: dde72ru@yandex.ru.</p>
+        <p><strong>Как отозвать согласие:</strong> Вы можете отозвать согласие на обработку данных в любое время, удалив приложение с вашего устройства или отключив соответствующие разрешения (например, доступ к геолокации) в настройках операционной системы вашего устройства.</p>
+        <p><strong>Как удалить аккаунт:</strong> Если в приложении предусмотрена регистрация аккаунта, вы можете запросить его полное удаление, написав нам на электронную почту. Мы удалим ваши данные в течение 15 рабочих дней.</p>
+        <p>Для реализации этих прав свяжитесь с нами по адресу: <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a>.</p>
 
-        <h2>7. Защита данных</h2>
-        <p>Мы применяем технические и организационные меры для защиты ваших данных от несанкционированного доступа, изменения, раскрытия или уничтожения.</p>
+        <h2>8. Защита данных</h2>
+        <p>Мы применяем технические и организационные меры (включая шифрование HTTPS) для защиты ваших данных от несанкционированного доступа, изменения, раскрытия или уничтожения.</p>
 
-        <h2>8. Изменения политики</h2>
+        <h2>9. Изменения политики</h2>
         <p>Мы можем обновлять настоящую Политику конфиденциальности. О существенных изменениях мы уведомим вас через приложение или по электронной почте.</p>
 
-        <h2>9. Контакты</h2>
+        <h2>10. Контакты</h2>
         <p>Если у вас есть вопросы о настоящей Политике конфиденциальности, свяжитесь с нами:</p>
         <ul>
-            <li><strong>Email:</strong> dde72ru@yandex.ru</li>
+            <li><strong>Email:</strong> <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></li>
         </ul>
     </div>
 
     <!-- ENGLISH VERSION -->
     <div id="en" class="language-section">
-        <h1>Privacy Policy for "Prazdniki" (Holidays) App</h1>
-        <p><strong>Last updated:</strong> June 21, 2026</p>
+        <h1>Privacy Policy for "Prazdniki" App</h1>
+        <p><strong>Last updated:</strong> June 22, 2026</p>
+
+        <div class="developer-info">
+            <p><strong>Application Name:</strong> Prazdniki</p>
+            <p><strong>Developer:</strong> [INSERT YOUR EXACT FULL NAME OR COMPANY NAME FROM APPGALLERY CONNECT]</p>
+            <p><strong>Contact Email:</strong> dde72ru@yandex.ru</p>
+        </div>
 
         <h2>1. General Provisions</h2>
-        <p>This Privacy Policy describes how the developer of the "Prazdniki" (Holidays) application collects, uses, and protects personal data of users of the "Prazdniki" app (the "Application").</p>
+        <p>This Privacy Policy describes how the developer of the "Prazdniki" application collects, uses, and protects personal data of users of the "Prazdniki" app (the "Application").</p>
         <p>By using the Application, you agree to the terms of this Policy.</p>
 
         <h2>2. What Data We Collect</h2>
@@ -120,12 +170,12 @@
             <li>Device identifier (OAID)</li>
             <li>Operating system and its version</li>
             <li>Device status</li>
-            <li>MAC addresses and IP addresses of available Wi-Fi devices</li>
+            <li><span class="sensitive">MAC addresses and IP addresses of available Wi-Fi devices</span></li>
         </ul>
 
         <h3>2.2. Geolocation Data:</h3>
         <ul>
-            <li>Device location data</li>
+            <li><span class="sensitive">Device location data (Geolocation)</span></li>
         </ul>
 
         <h3>2.3. Usage Data:</h3>
@@ -152,44 +202,163 @@
         </ul>
         <p>We do not sell your personal data to third parties.</p>
 
-        <h2>5. Data Storage</h2>
-        <p>Your data is stored on servers located outside mainland China.</p>
-        <p>Data retention period: until the user deletes the application.</p>
+        <h2>5. Third-Party SDKs</h2>
+        <p>To ensure the application works properly, we use the following third-party SDKs that may collect personal data:</p>
+        <table class="sdk-table">
+            <tr>
+                <th>SDK Name</th>
+                <th>SDK Developer</th>
+                <th>Collected Data</th>
+                <th>Purpose</th>
+                <th>Privacy Policy</th>
+            </tr>
+            <tr>
+                <td>Huawei Ads / Analytics SDK</td>
+                <td>Huawei</td>
+                <td>OAID, device status</td>
+                <td>Analytics and Ads</td>
+                <td><a href="https://developer.huawei.com/consumer/en/" target="_blank">Link</a></td>
+            </tr>
+            <!-- ADD OTHER SDKs HERE IF ANY (e.g., AdMob, Firebase, AppMetrica, etc.) -->
+        </table>
 
-        <h2>6. Your Rights</h2>
+        <h2>6. Data Storage</h2>
+        <p>Your data is stored on servers located outside mainland China.</p>
+        <p>Data retention period: until the user deletes the application or withdraws consent.</p>
+
+        <h2>7. Your Rights, Withdrawal of Consent, and Account Deletion</h2>
         <p>You have the right to:</p>
         <ul>
-            <li><strong>Access:</strong> request a copy of your personal data</li>
-            <li><strong>Correction:</strong> correct inaccurate data</li>
-            <li><strong>Deletion:</strong> request the deletion of your data</li>
-            <li><strong>Restriction of processing:</strong> restrict the use of your data</li>
-            <li><strong>Withdrawal of consent:</strong> withdraw consent to data processing at any time</li>
+            <li><strong>Access and Correction:</strong> request a copy of your personal data or correct inaccurate data.</li>
+            <li><strong>Deletion:</strong> request the deletion of your data.</li>
+            <li><strong>Restriction of processing:</strong> restrict the use of your data.</li>
         </ul>
-        <p>To exercise these rights, please contact us at: dde72ru@yandex.ru.</p>
+        <p><strong>How to withdraw consent:</strong> You can withdraw your consent to data processing at any time by deleting the application from your device or by revoking relevant permissions (e.g., location access) in your device's operating system settings.</p>
+        <p><strong>How to delete account:</strong> If the application provides account registration, you can request its complete deletion by writing to our email. We will delete your data within 15 business days.</p>
+        <p>To exercise these rights, please contact us at: <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a>.</p>
 
-        <h2>7. Data Protection</h2>
-        <p>We apply technical and organizational measures to protect your data from unauthorized access, alteration, disclosure, or destruction.</p>
+        <h2>8. Data Protection</h2>
+        <p>We apply technical and organizational measures (including HTTPS encryption) to protect your data from unauthorized access, alteration, disclosure, or destruction.</p>
 
-        <h2>8. Policy Changes</h2>
+        <h2>9. Policy Changes</h2>
         <p>We may update this Privacy Policy. We will notify you of significant changes through the application or by email.</p>
 
-        <h2>9. Contacts</h2>
+        <h2>10. Contacts</h2>
         <p>If you have any questions about this Privacy Policy, please contact us:</p>
         <ul>
-            <li><strong>Email:</strong> dde72ru@yandex.ru</li>
+            <li><strong>Email:</strong> <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></li>
+        </ul>
+    </div>
+
+    <!-- CHINESE VERSION (Simplified Chinese - Required by Huawei Rule 1.9) -->
+    <div id="zh" class="language-section">
+        <h1>“Prazdniki”（节日）应用隐私政策</h1>
+        <p><strong>最近更新日期：</strong>2026 年 6 月 22 日</p>
+
+        <div class="developer-info">
+            <p><strong>应用名称：</strong>Prazdniki (节日)</p>
+            <p><strong>开发者：</strong>[在此处填入您在 APPGALLERY CONNECT 中的准确姓名或公司名称]</p>
+            <p><strong>联系邮箱：</strong>dde72ru@yandex.ru</p>
+        </div>
+
+        <h2>1. 一般条款</h2>
+        <p>本隐私政策描述了“Prazdniki”（节日）应用（以下简称“本应用”）的开发者如何收集、使用和保护用户的个人数据。</p>
+        <p>使用本应用即表示您同意本政策的条款。</p>
+
+        <h2>2. 我们收集的数据</h2>
+        <p>我们收集以下类别的数据：</p>
+
+        <h3>2.1 设备技术数据：</h3>
+        <ul>
+            <li>设备标识符 (OAID)</li>
+            <li>操作系统及其版本</li>
+            <li>设备状态</li>
+            <li><span class="sensitive">可用 Wi-Fi 设备的 MAC 地址和 IP 地址</span></li>
+        </ul>
+
+        <h3>2.2 地理位置数据：</h3>
+        <ul>
+            <li><span class="sensitive">设备位置数据（地理位置）</span></li>
+        </ul>
+
+        <h3>2.3 使用数据：</h3>
+        <ul>
+            <li>与应用交互的信息</li>
+            <li>会话和活动数据</li>
+        </ul>
+
+        <h2>3. 数据收集目的</h2>
+        <p>我们将收集的数据用于以下目的：</p>
+        <ul>
+            <li><strong>广告和营销：</strong>个性化广告提供，分析广告活动效果（需征得您的同意）</li>
+            <li><strong>应用改进：</strong>性能分析，修复错误</li>
+            <li><strong>安全：</strong>防止欺诈和未经授权的访问</li>
+            <li><strong>分析：</strong>了解用户如何与应用交互</li>
+        </ul>
+
+        <h2>4. 向第三方转移数据</h2>
+        <p>我们可能会将数据转移给以下类别的接收者：</p>
+        <ul>
+            <li><strong>广告合作伙伴：</strong>用于展示个性化广告（需征得您的同意）</li>
+            <li><strong>分析服务：</strong>用于收集使用统计信息</li>
+            <li><strong>执法机构：</strong>根据法律要求</li>
+        </ul>
+        <p>我们不会将您的个人数据出售给第三方。</p>
+
+        <h2>5. 第三方 SDK</h2>
+        <p>为了确保应用的正常运行，我们使用了以下可能收集个人数据的第三方 SDK：</p>
+        <table class="sdk-table">
+            <tr>
+                <th>SDK 名称</th>
+                <th>SDK 开发者</th>
+                <th>收集的数据</th>
+                <th>收集目的</th>
+                <th>隐私政策</th>
+            </tr>
+            <tr>
+                <td>Huawei Ads / Analytics SDK</td>
+                <td>Huawei</td>
+                <td>OAID、设备状态</td>
+                <td>分析和广告</td>
+                <td><a href="https://developer.huawei.com/consumer/cn/" target="_blank">链接</a></td>
+            </tr>
+            <!-- 在此处添加其他 SDK -->
+        </table>
+
+        <h2>6. 数据存储</h2>
+        <p>您的数据存储在位于中国大陆以外的服务器上。</p>
+        <p>保留期限：直到用户删除应用或撤回同意。</p>
+
+        <h2>7. 您的权利、撤回同意和删除账户</h2>
+        <p>您有权：</p>
+        <ul>
+            <li><strong>访问和更正：</strong>请求获取您的个人数据副本或更正不准确的数据。</li>
+            <li><strong>删除：</strong>请求删除您的数据。</li>
+            <li><strong>限制处理：</strong>限制对您数据的使用。</li>
+        </ul>
+        <p><strong>如何撤回同意：</strong>您可以随时通过从设备中删除应用或在设备操作系统设置中撤销相关权限（例如位置访问权限）来撤回对数据处理的同意。</p>
+        <p><strong>如何删除账户：</strong>如果本应用提供账户注册功能，您可以通过发送电子邮件请求完全删除您的账户。我们将在 15 个工作日内删除您的数据。</p>
+        <p>要行使这些权利，请通过以下方式联系我们：<a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a>。</p>
+
+        <h2>8. 数据保护</h2>
+        <p>我们采用技术和组织措施（包括 HTTPS 加密）来保护您的数据免受未经授权的访问、更改、披露或破坏。</p>
+
+        <h2>9. 政策变更</h2>
+        <p>我们可能会更新本隐私政策。我们将通过应用或电子邮件通知您重大更改。</p>
+
+        <h2>10. 联系方式</h2>
+        <p>如果您对本隐私政策有疑问，请与我们联系：</p>
+        <ul>
+            <li><strong>电子邮件：</strong><a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></li>
         </ul>
     </div>
 
     <script>
         function showLanguage(lang) {
-            // Скрыть все секции
             document.querySelectorAll('.language-section').forEach(el => el.classList.remove('active'));
-            // Показать выбранную
             document.getElementById(lang).classList.add('active');
-            // Обновить активную кнопку
             document.querySelectorAll('.language-selector a').forEach(el => el.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
-            // Установить язык документа
             document.documentElement.lang = lang;
         }
     </script>
