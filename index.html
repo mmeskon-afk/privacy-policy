@@ -6,17 +6,17 @@
     <title>Privacy Policy / Политика конфиденциальности - Праздники</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; background: #fff; }
-        h1 { color: #1a1a1a; border-bottom: 2px solid #0366d6; padding-bottom: 10px; }
+        h1 { color: #1a1a1a; border-bottom: 2px solid #0366d6; padding-bottom: 10px; font-size: 24px; }
         h2 { color: #333; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
         h3 { color: #444; margin-top: 20px; }
-        a { color: #0366d6; }
+        a { color: #0366d6; word-break: break-all; }
         .language-selector { text-align: center; margin-bottom: 30px; padding: 15px; background: #f6f8fa; border-radius: 8px; border: 1px solid #e1e4e8; }
         .language-selector a { margin: 0 15px; text-decoration: none; color: #0366d6; font-weight: bold; font-size: 16px; }
         .language-selector a:hover { text-decoration: underline; }
         .language-selector a.active { color: #1a1a1a; text-decoration: underline; }
         .language-section { display: none; }
         .language-section.active { display: block; }
-        ul { margin-bottom: 15px; }
+        ul { margin-bottom: 15px; padding-left: 20px; }
         li { margin-bottom: 8px; }
         
         .developer-info { background: #f1f8ff; padding: 15px; border-left: 5px solid #0366d6; margin-bottom: 25px; border-radius: 4px; font-size: 16px; }
@@ -30,30 +30,34 @@
         }
         
         .sdk-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; font-size: 14px; overflow-x: auto; display: block; }
-        .sdk-table th, .sdk-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .sdk-table th, .sdk-table td { border: 1px solid #ddd; padding: 10px; text-align: left; vertical-align: top; }
         .sdk-table th { background-color: #f6f8fa; }
+        
+        .top-meta { font-size: 15px; color: #555; margin-bottom: 5px; }
     </style>
 </head>
 <body>
     <div class="language-selector">
         <a href="#" id="btn-ru" class="active" onclick="showLanguage('ru'); return false;">🇷🇺 Русский</a> | 
-        <a href="#" id="btn-en" onclick="showLanguage('en'); return false;">🇬🇧 English</a> |
+        <a href="#" id="btn-en" onclick="showLanguage('en'); return false;">🇬🇧 English</a> | 
         <a href="#" id="btn-zh" onclick="showLanguage('zh'); return false;">🇨🇳 简体中文</a>
     </div>
 
     <!-- РУССКАЯ ВЕРСИЯ -->
     <div id="ru" class="language-section active">
         <h1>Политика конфиденциальности приложения «Праздники»</h1>
-        <p><strong>Последнее обновление:</strong> 22 июня 2026 г.</p>
+        <p class="top-meta"><strong>Разработчик:</strong> Deviatkov Dmitrii Evgenievich | <strong>Приложение:</strong> Праздники</p>
+        <p><strong>Последнее обновление:</strong> 25 июня 2026 г.</p>
 
         <div class="developer-info">
             <p><strong>Название приложения:</strong> Праздники</p>
-            <p><strong>Разработчик:</strong> Девятков Дмитрий Евгеньевич</p>
+            <p><strong>Разработчик:</strong> Deviatkov Dmitrii Evgenievich</p>
             <p><strong>Контактный Email:</strong> <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></p>
         </div>
 
         <h2>1. Общие положения</h2>
-        <p>Настоящая Политика конфиденциальности описывает, как Девятков Дмитрий Евгеньевич (далее «Разработчик») собирает, использует и защищает персональные данные пользователей приложения «Праздники» (далее «Приложение»). Используя Приложение, вы соглашаетесь с условиями настоящей Политики.</p>
+        <p>Настоящая Политика конфиденциальности описывает, как <strong>Deviatkov Dmitrii Evgenievich</strong> (далее «Разработчик», «мы») собирает, использует и защищает персональные данные пользователей мобильного приложения <strong>«Праздники»</strong> (далее «Приложение»). Используя Приложение, вы соглашаетесь с условиями настоящей Политики.</p>
+        <p>Мы <strong>не</strong> собираем персональные данные в фоновом режиме или когда Приложение не используется активно, за исключением случаев, строго необходимых для работы базовых функций.</p>
 
         <h2>2. Какие данные мы собираем</h2>
         <h3>2.1. Технические данные устройства:</h3>
@@ -94,7 +98,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Yandex Mobile Ads SDK (Рекламная сеть Яндекса)</td>
+                    <td>Yandex Mobile Ads SDK</td>
                     <td>ООО «Яндекс» (Yandex LLC)</td>
                     <td><span class="sensitive">OAID, IP-адрес, характеристики устройства, данные о взаимодействии с рекламой</span></td>
                     <td>Показ контекстной и персонализированной рекламы, аналитика</td>
@@ -110,14 +114,14 @@
         <ul>
             <li><strong>Отзыв согласия:</strong> Вы можете отозвать согласие на обработку данных в любое время, удалив приложение с вашего устройства или отключив разрешения (например, доступ к геолокации) в настройках ОС.</li>
             <li><strong>Удаление аккаунта:</strong> Если вы создавали аккаунт, вы можете запросить его полное удаление и удаление всех связанных данных, написав нам на почту. Мы выполним запрос в течение 15 рабочих дней.</li>
-            <li><strong>Отключение персонализированной рекламы:</strong> Вы можете отключить персонализированную рекламу в настройках вашего устройства (в разделе "Конфиденциальность" или "Реклама") или в настройках самого Приложения. При отключении этой функции OAID не будет использоваться для таргетинга.</li>
+            <li><strong>Отключение персонализированной рекламы:</strong> Вы можете отключить персонализированную рекламу в настройках вашего устройства (в разделе "Конфиденциальность" или "Реклама") или в настройках самого Приложения. <strong>Приложение проверяет статус системной настройки «Отказ от персонализированной рекламы» и прекращает использование OAID для таргетинга.</strong> Новый OAID после сброса не связывается с предыдущими данными без вашего явного согласия.</li>
         </ul>
         <p>Для реализации этих прав свяжитесь с нами: <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a>.</p>
 
         <h2>7. Контакты</h2>
         <p>Если у вас есть вопросы о настоящей Политике, свяжитесь с нами:</p>
         <ul>
-            <li><strong>Разработчик:</strong> Девятков Дмитрий Евгеньевич</li>
+            <li><strong>Разработчик:</strong> Deviatkov Dmitrii Evgenievich</li>
             <li><strong>Email:</strong> <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></li>
         </ul>
     </div>
@@ -125,16 +129,18 @@
     <!-- ENGLISH VERSION -->
     <div id="en" class="language-section">
         <h1>Privacy Policy for "Prazdniki" App</h1>
-        <p><strong>Last updated:</strong> June 22, 2026</p>
+        <p class="top-meta"><strong>Developer:</strong> Deviatkov Dmitrii Evgenievich | <strong>App:</strong> Праздники</p>
+        <p><strong>Last updated:</strong> June 25, 2026</p>
 
         <div class="developer-info">
-            <p><strong>Application Name:</strong> Prazdniki</p>
-            <p><strong>Developer:</strong> Dmitry Evgenievich Devyatkov (Девятков Дмитрий Евгеньевич)</p>
+            <p><strong>Application Name:</strong> Праздники</p>
+            <p><strong>Developer:</strong> Deviatkov Dmitrii Evgenievich</p>
             <p><strong>Contact Email:</strong> <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></p>
         </div>
 
         <h2>1. General Provisions</h2>
-        <p>This Privacy Policy describes how Dmitry Evgenievich Devyatkov (the "Developer") collects, uses, and protects personal data of users of the "Prazdniki" app (the "Application"). By using the Application, you agree to the terms of this Policy.</p>
+        <p>This Privacy Policy describes how <strong>Deviatkov Dmitrii Evgenievich</strong> (the "Developer", "we") collects, uses, and protects personal data of users of the <strong>"Праздники"</strong> app (the "Application"). By using the Application, you agree to the terms of this Policy.</p>
+        <p>We <strong>do not</strong> collect personal data in the background or when the Application is not actively used, except when strictly necessary for core functions.</p>
 
         <h2>2. What Data We Collect</h2>
         <h3>2.1. Device Technical Data:</h3>
@@ -191,30 +197,32 @@
         <ul>
             <li><strong>Withdrawal of consent:</strong> You can withdraw consent anytime by deleting the app or revoking permissions in OS settings.</li>
             <li><strong>Account deletion:</strong> You can request complete account and data deletion by emailing us. We will process it within 15 business days.</li>
-            <li><strong>Disable personalized ads:</strong> You can turn off personalized ads in your device settings or in-app settings. OAID will not be used for targeting if disabled.</li>
+            <li><strong>Disable personalized ads:</strong> You can turn off personalized ads in your device settings or in-app settings. <strong>The Application checks the system "Opt-out of personalized ads" setting and stops using OAID for targeting if enabled.</strong> A new OAID after reset is not associated with previous data without your explicit consent.</li>
         </ul>
         <p>Contact us: <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a>.</p>
 
         <h2>7. Contacts</h2>
         <ul>
-            <li><strong>Developer:</strong> Dmitry Evgenievich Devyatkov (Девятков Дмитрий Евгеньевич)</li>
+            <li><strong>Developer:</strong> Deviatkov Dmitrii Evgenievich</li>
             <li><strong>Email:</strong> <a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></li>
         </ul>
     </div>
 
     <!-- CHINESE VERSION (Simplified Chinese - Required by Huawei Rule 1.9) -->
     <div id="zh" class="language-section">
-        <h1>“Prazdniki”（节日）应用隐私政策</h1>
-        <p><strong>最近更新日期：</strong>2026 年 6 月 22 日</p>
+        <h1>“Праздники”应用隐私政策</h1>
+        <p class="top-meta"><strong>开发者：</strong>Deviatkov Dmitrii Evgenievich | <strong>应用：</strong>Праздники</p>
+        <p><strong>最近更新日期：</strong>2026 年 6 月 25 日</p>
 
         <div class="developer-info">
-            <p><strong>应用名称：</strong>Prazdniki (节日)</p>
-            <p><strong>开发者：</strong>Девятков Дмитрий Евгеньевич</p>
+            <p><strong>应用名称：</strong>Праздники</p>
+            <p><strong>开发者：</strong>Deviatkov Dmitrii Evgenievich</p>
             <p><strong>联系邮箱：</strong><a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></p>
         </div>
 
         <h2>1. 一般条款</h2>
-        <p>本隐私政策描述了开发者 Девятков Дмитрий Евгеньевич（以下简称“开发者”）如何收集、使用和保护“Prazdniki”应用（以下简称“本应用”）用户的个人数据。使用本应用即表示您同意本政策的条款。</p>
+        <p>本隐私政策描述了开发者 <strong>Deviatkov Dmitrii Evgenievich</strong>（以下简称“开发者”、“我们”）如何收集、使用和保护 <strong>“Праздники”</strong>应用（以下简称“本应用”）用户的个人数据。使用本应用即表示您同意本政策的条款。</p>
+        <p>当本应用未在后台运行或未被主动使用时，我们<strong>不会</strong>收集个人数据，除非为核心功能所严格必需。</p>
 
         <h2>2. 我们收集的数据</h2>
         <h3>2.1 设备技术数据：</h3>
@@ -271,13 +279,13 @@
         <ul>
             <li><strong>撤回同意：</strong>您可以随时通过删除应用或在系统设置中撤销权限来撤回同意。</li>
             <li><strong>删除账户：</strong>您可以通过电子邮件请求完全删除账户和数据。我们将在 15 个工作日内处理。</li>
-            <li><strong>关闭个性化广告：</strong>您可以在设备设置或应用设置中关闭个性化广告。关闭后，OAID 将不再用于定向投放。</li>
+            <li><strong>关闭个性化广告：</strong>您可以在设备设置或应用设置中关闭个性化广告。<strong>本应用会检查系统“拒绝个性化广告”设置，若已开启则停止使用 OAID 进行定向投放。</strong>重置后的新 OAID 未经您明确同意不会与之前的数据关联。</li>
         </ul>
         <p>联系方式：<a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a>。</p>
 
         <h2>7. 联系方式</h2>
         <ul>
-            <li><strong>开发者：</strong>Девятков Дмитрий Евгеньевич</li>
+            <li><strong>开发者：</strong>Deviatkov Dmitrii Evgenievich</li>
             <li><strong>电子邮件：</strong><a href="mailto:dde72ru@yandex.ru">dde72ru@yandex.ru</a></li>
         </ul>
     </div>
